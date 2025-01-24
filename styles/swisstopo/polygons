@@ -1,0 +1,16 @@
+# -------------------------------------------------------------------
+# This is the default mkgmap style file for converting closed OSM ways
+# into Garmin polygons.
+# Any line prefaced with # is a comment and will not be applied.
+# Each line is a rule, of the generalised format:
+#  OSM_tag(s)_to_match  [Garmin_type_code resolution]
+# See http://wiki.openstreetmap.org/wiki/Mkgmap/help/style_rules
+# and http://wiki.openstreetmap.org/wiki/Mkgmap/help/Custom_styles
+# for more information.
+
+OBJEKTART=Wald | OBJEKTART=Wald_offen_Symb [0x50 level 2]
+OBJEKTART=See & SG=Sehr_gross [0x3c level 4]
+OBJEKTART=See [0x3c level 2]
+OBJEKTART=Fluss [0x46 level 1]
+OBJEKTART=Feuchtgebiet_Symb [0x51 level 2]
+OBJEKTART=Gebueschwald_Symb [0x4f level 2]

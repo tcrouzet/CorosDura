@@ -1,0 +1,8 @@
+# Rules for naming objects, based on the following tags:
+# name, brand, operator, ref
+
+# delete FIXME values (they should be better used in maintenance maps)
+ref=* {deletealltags} 
+operator=* {deletealltags} 
+brand=* {deletealltags} 
+name=* {deletealltags} 

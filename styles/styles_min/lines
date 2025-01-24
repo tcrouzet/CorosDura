@@ -1,0 +1,5 @@
+﻿# Routes principales
+highway=road [0x01 resolution 24]
+
+# Supprimer les étiquettes
+name=* {deletealltags}

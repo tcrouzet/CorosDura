@@ -1,0 +1,24 @@
+# -------------------------------------------------------------------
+# This is the default mkgmap style file for converting OSM ways
+# into Garmin lines.
+# Any line prefaced with # is a comment and will not be applied.
+# Each line is a rule, of the generalised format:
+#  OSM_tag(s)_to_match  [Garmin_type_code resolution]
+# See http://wiki.openstreetmap.org/wiki/Mkgmap/help/style_rules
+# and http://wiki.openstreetmap.org/wiki/Mkgmap/help/Custom_styles
+# for more information.
+OBJEKTART=Autobahn [0x05 level 4]
+OBJEKTART=10m_Strasse [0x05 level 3]
+OBJEKTART=Autostrasse | OBJEKTART=Einfahrt | OBJEKTART=Ausfahrt | OBJEKTART=Zufahrt [0x04 level 3]
+OBJEKTART=8m_Strasse | OBJEKTART=6m_Strasse [0x06 level 2]
+OBJEKTART=4m_Strasse | OBJEKTART=3m_Strasse [0x07 level 1]
+OBJEKTART=2m_Weg | OBJEKTART=2m_Wegfragment  [0x0a level 1]
+OBJEKTART=1m_Weg | OBJEKTART=1m_Wegfragment | OBJEKTART=Markierte_Spur | OBJEKTART=Klettersteig [0x16 level 1]
+OBJEKTART=Fliessgewaesser & (SG=Sehr_klein | SG=Klein) [0x18 level 1]
+
+OBJEKTART=Gondelbahn | OBJEKTART=Luftseilbahn | OBJEKTART=Sesselbahn | OBJEKTART=Skilift [0x2f level 2]
+OBJEKTART=Kleinbahn  | OBJEKTART=Schmalspur | OBJEKTART=Schmalspur_mit_Normalspur [0x14 level 2]
+OBJEKTART=Normalspur [0x14 level 3]
+
+OBJEKTART=Normalkurve { name '${HOEHE|conv:m=>ft}'; } [0x20 level 1]
+OBJEKTART=Zaehlkurve { name '${HOEHE|conv:m=>ft}'; } [0x22 level 3]

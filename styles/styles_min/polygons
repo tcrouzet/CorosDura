@@ -1,0 +1,5 @@
+# Zones d'eau
+natural=water [0x3c resolution 22]
+
+# Supprimer les étiquettes
+name=* {deletealltags}

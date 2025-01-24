@@ -1,0 +1,5 @@
+﻿# Routes principales
+type=route & route=road { apply { set highway=road; } }
+
+# Supprimer les étiquettes
+name=* {deletealltags}

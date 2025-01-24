@@ -1,0 +1,35 @@
+﻿# -------------------------------------------------------------------
+# This is the default mkgmap style file for converting OSM nodes
+# into Garmin POIs.
+# Any line prefaced with # is a comment and will not be applied.
+# Each line is a rule, of the generalised format:
+#  OSM_tag(s)_to_match  [Garmin_type_code resolution]
+# See http://wiki.openstreetmap.org/wiki/Mkgmap/help/style_rules
+# and http://wiki.openstreetmap.org/wiki/Mkgmap/help/Custom_styles
+# for more information.
+
+#include 'inc/address';
+
+#don't render
+amenity=* {deletealltags}
+leisure=* {deletealltags}
+barrier=* {deletealltags}
+shop=* {deletealltags}
+historic=* {deletealltags}
+tourism=* {deletealltags}
+aeroway=* {deletealltags}
+healthcare=* {deletealltags}
+natural=* {deletealltags}
+man_made=* {deletealltags}
+rcn_ref=* {deletealltags}
+place=* {deletealltags}
+public_transport=* {deletealltags}
+internet_access=* {deletealltags}
+highway=* {deletealltags}
+railway=* {deletealltags}
+
+include 'inc/name';
+	
+<finalize>
+# The finalizer section is executed for each element when a rule with an element type matches
+#include 'inc/compat_points';
