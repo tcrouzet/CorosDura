@@ -130,7 +130,9 @@ def create_segment(input_file, min_lat, max_lat, min_lon, max_lon, output_file):
     writer.close()
 
 
-def segment_map(input_osm, output_base_dir):
+def segment_map(input_osm, output_base_dir, mode="OSM"):
+    """ generate map. Mode = OSM or CM"""
+
     # Obtenir les limites de la carte
     bounds = get_map_bounds(input_osm)
 
@@ -154,10 +156,13 @@ def segment_map(input_osm, output_base_dir):
             lon_str = f"{abs(lon):04d}"
 
             # Nom du fichier selon convention Dura
-            segment_file = f'C{lat_str}{lon_str}'
+            if mode=="CM":
+                segment_file = f'C{lat_str}{lon_str}'
+            else:
+                segment_file = f'S{lat_str}{lon_str}V04'
 
             # Structure de dossiers selon Dura
-            segment_dir = Path(output_base_dir) / 'CM' / lon_prefix / lat_str2 / lat_prefix
+            segment_dir = Path(output_base_dir) / mode / lon_prefix / lat_str2 / lat_prefix
             segment_dir.mkdir(parents=True, exist_ok=True)
 
             osm_file = segment_dir / f'{segment_file}.osm'
@@ -225,4 +230,4 @@ if __name__ == "__main__":
         shutil.rmtree(output_path)
     output_path.mkdir(exist_ok=True)  # Créer le répertoire de sortie
 
-    segment_map(input_file, output_dir)
+    segment_map(input_file, output_dir, "OSM")

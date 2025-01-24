@@ -1,8 +1,10 @@
 # Coros Dura
 
-Projet to generate Coros Dura map from OSM on MacOS. Not working at that time.
+Python to generate Coros Dura maps from OSM on MacOS, using [Mkgmap](https://www.mkgmap.org.uk/). Not working at that time.
 
-Set input_file in app.py.
+### How to use
+
+In app.py, set input_file to your OSM file (input_file = "my.osm" for exemple)
 
 pip install osmium
 
@@ -10,7 +12,7 @@ python app.py
 
 results in _output
 
-### Donwload OSM
+### Download OSM
 
 https://download.openstreetmap.fr/extracts/europe/france/
 
@@ -20,3 +22,15 @@ https://extract.bbbike.org/
 
 brew install osmosis
 osmosis --read-pbf file="my.osm.pbf" --write-xml file="my.osm"
+
+### Mount Dura disk on Mac
+
+brew install --cask openmtp
+
+### Inspiration
+
+https://panaetius.github.io/swiss-topo-maps-on-coros/
+
+### Comments in French on my blog
+
+
